@@ -68,7 +68,7 @@ function AddDrugForm({ signer, contract }) {
   } = getSupplyCountForm;
 
   return (
-    <div className=" h-full border rounded-lg p-5 ">
+    <div className=" md:w-[50%] h-full border rounded-lg p-5 ">
       <form className="">
         <p className=" font-semibold">Drug Info.:</p>
         <input
