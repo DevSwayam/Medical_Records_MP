@@ -1,0 +1,142 @@
+import React, { useState } from "react";
+import { ethers } from "ethers";
+
+function AddDoctor(contract) {
+  const [doctorAddress, setDoctorAddress] = useState("");
+  const [id, setId] = useState("");
+  const [name, setName] = useState("");
+  const [houseAddr, setHouseAddr] = useState("");
+  const [cityAddr, setCityAddr] = useState("");
+  const [stateAddr, setStateAddr] = useState("");
+  const [postalAddr, setPostalAddr] = useState("");
+  const [countryAddr, setCountryAddr] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [licenseNo, setLicenseNo] = useState("");
+  const [qualification, setQualification] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleAddDoctor = async () => {
+    try {
+      const transaction = await contract.addDoctor(
+        doctorAddress,
+        id,
+        name,
+        houseAddr,
+        cityAddr,
+        stateAddr,
+        postalAddr,
+        countryAddr,
+        phone,
+        email,
+        ethers.utils.parseUnits(licenseNo.toString(), 0), // Convert licenseNo to uint256
+        qualification
+      );
+
+      await transaction.wait();
+      setErrorMessage("");
+      // Clear the form fields after a successful transaction
+      setDoctorAddress("");
+      setId("");
+      setName("");
+      setHouseAddr("");
+      setCityAddr("");
+      setStateAddr("");
+      setPostalAddr("");
+      setCountryAddr("");
+      setPhone("");
+      setEmail("");
+      setLicenseNo("");
+      setQualification("");
+    } catch (error) {
+      setErrorMessage("Transaction failed. Check the input and try again.");
+      console.error(error);
+    }
+  };
+
+  return (
+    <div>
+      <p>Add Doctor</p>
+      <form>
+        <input
+          type="text"
+          placeholder="Doctor Address"
+          value={doctorAddress}
+          onChange={(e) => setDoctorAddress(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="ID"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="House Address"
+          value={houseAddr}
+          onChange={(e) => setHouseAddr(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="City Address"
+          value={cityAddr}
+          onChange={(e) => setCityAddr(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="State Address"
+          value={stateAddr}
+          onChange={(e) => setStateAddr(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Postal Address"
+          value={postalAddr}
+          onChange={(e) => setPostalAddr(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Country Address"
+          value={countryAddr}
+          onChange={(e) => setCountryAddr(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="License Number"
+          value={licenseNo}
+          onChange={(e) => setLicenseNo(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Qualification"
+          value={qualification}
+          onChange={(e) => setQualification(e.target.value)}
+        />
+        <button type="button" onClick={handleAddDoctor}>
+          Add Doctor
+        </button>
+      </form>
+      {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+    </div>
+  );
+}
+
+export default AddDoctor;
