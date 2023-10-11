@@ -6,6 +6,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import { useState, useEffect } from "react";
 import DoctorDashboard from "./pages/DoctorDashboard";
 import SupplierDashboard from "./pages/SupplierDashboard";
+import Home from "./pages/Home";
 
 const { ethers } = require("ethers");
 const {
@@ -68,6 +69,14 @@ function App() {
           element={
             <SupplierDashboard
               contract={contract}
+            />
+          }
+        />
+        <Route
+          path="/*"
+          element={
+            <Home
+              
             />
           }
         />
