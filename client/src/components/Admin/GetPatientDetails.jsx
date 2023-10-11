@@ -86,44 +86,46 @@ function GetPatientDetails({ contract }) {
   };
 
   return (
-    <div className="md:w-1/2 h-full border rounded-lg p-5 ">
-      <p>Get Patient details</p>
-      <form className="">
-        <input
-          type="text"
-          placeholder="Patient Address"
-          value={patientAddress}
-          onChange={(e) => setPatientAddress(e.target.value)}
-          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
-        />
-        <button
-          type="button"
-          onClick={handleGetPatientDetails}
-          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none bg-lightPrimary"
-        >
-          Get Patient Details
-        </button>
-      </form>
-      {patientDetails.name && (
-        <div>
-          <p>Id: {patientDetails.id}</p>
-          <p>Name: {patientDetails.name}</p>
-          <p>House Address: {patientDetails.houseAddr}</p>
-          <p>City Address: {patientDetails.cityAddr}</p>
-          <p>State Address: {patientDetails.stateAddr}</p>
-          <p>Postal Address: {patientDetails.postalAddr}</p>
-          <p>Country Address: {patientDetails.countryAddr}</p>
-          <p>Phone: {patientDetails.phone}</p>
-          <p>Email: {patientDetails.email}</p>
-          <p>Running Disease 1: {patientDetails.runningDisease1}</p>
-          <p>Running Disease 2: {patientDetails.runningDisease2}</p>
-          <p>Symptoms: {patientDetails.symptoms}</p>
-          <p>Medication: {patientDetails.medication}</p>
-          <p>Additional Info: {patientDetails.additionalInfo}</p>
-        </div>
-      )}
-      {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-      <AddPatient contract={contract}/>
+    <div className="md:w-1/2 h-full ">
+      <div className="border rounded-lg p-5 ">
+        <p className=" font-semibold">Get Patient details</p>
+        <form className="">
+          <input
+            type="text"
+            placeholder="Patient Address"
+            value={patientAddress}
+            onChange={(e) => setPatientAddress(e.target.value)}
+            className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
+          />
+          <button
+            type="button"
+            onClick={handleGetPatientDetails}
+            className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none bg-lightPrimary"
+          >
+            Get Patient Details
+          </button>
+        </form>
+        {patientDetails.name && (
+          <div>
+            <p>Id: {patientDetails.id}</p>
+            <p>Name: {patientDetails.name}</p>
+            <p>House Address: {patientDetails.houseAddr}</p>
+            <p>City Address: {patientDetails.cityAddr}</p>
+            <p>State Address: {patientDetails.stateAddr}</p>
+            <p>Postal Address: {patientDetails.postalAddr}</p>
+            <p>Country Address: {patientDetails.countryAddr}</p>
+            <p>Phone: {patientDetails.phone}</p>
+            <p>Email: {patientDetails.email}</p>
+            <p>Running Disease 1: {patientDetails.runningDisease1}</p>
+            <p>Running Disease 2: {patientDetails.runningDisease2}</p>
+            <p>Symptoms: {patientDetails.symptoms}</p>
+            <p>Medication: {patientDetails.medication}</p>
+            <p>Additional Info: {patientDetails.additionalInfo}</p>
+          </div>
+        )}
+        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+      </div>
+      <AddPatient contract={contract} />
     </div>
   );
 }

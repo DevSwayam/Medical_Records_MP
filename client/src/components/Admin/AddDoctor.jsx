@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ethers } from "ethers";
 import GetDoctor from "./GetDoctor";
 
-function AddDoctor({contract}) {
+function AddDoctor({ contract }) {
   const [doctorAddress, setDoctorAddress] = useState("");
   const [id, setId] = useState("");
   const [name, setName] = useState("");
@@ -56,8 +56,9 @@ function AddDoctor({contract}) {
   };
 
   return (
-    <div className="h-full border rounded-lg p-5 ">
-      <p>Add Doctor</p>
+    <div className="md:w-1/2 h-full ">
+      <div className="border rounded-lg p-5 mb-8">
+      <p className=" font-semibold">Add Doctor</p>
       <form>
         <input
           type="text"
@@ -151,7 +152,8 @@ function AddDoctor({contract}) {
           Add Doctor
         </button>
       </form>
-      <GetDoctor contract={contract}/>
+      </div>
+      <GetDoctor contract={contract} />
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
     </div>
   );

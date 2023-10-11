@@ -28,7 +28,7 @@ function GetDrug({ contract }) {
   const { drugName, supplyCount, errorMessage } = getSupplyCountForm;
 
   return (
-    <div className="md:w-[50%] h-full border rounded-lg p-5 ">
+    <div className="w-full md:w-1/2 mt-6 h-full border rounded-lg p-5 ">
       <form>
         <input
           type="text"

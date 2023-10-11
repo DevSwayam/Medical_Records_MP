@@ -37,7 +37,7 @@ function GetPharmacy({ contract }) {
   };
 
   return (
-    <div className="md:w-1/2 h-full border rounded-lg p-5 ">
+    <div className="h-full border rounded-lg p-5 ">
       <p>Get Pharmacy details</p>
       <form>
         <input

@@ -4,7 +4,7 @@ import GetDrug from '../components/Admin/GetDrug'
 
 const DoctorDashboard = ({contract}) => {
   return (
-    <div className=' flex justify-center items-center mt-24'>
+    <div className=' w-full flex flex-col justify-center items-center mt-24'>
         <DoctorPatient contract={contract}/>
         <GetDrug contract={contract}/>
     </div>

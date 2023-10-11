@@ -9,7 +9,9 @@ function AllocateDrugs({ contract, currentUser }) {
   const handleAllocateDrugs = async () => {
     try {
       // Remove drugs with zero supply
-      const validDrugs = drugs.filter((_, index) => allocationAmounts[index] > 0);
+      const validDrugs = drugs.filter(
+        (_, index) => allocationAmounts[index] > 0
+      );
       const validAmounts = allocationAmounts.filter((amount) => amount > 0);
 
       if (validDrugs.length === 0) {
@@ -37,14 +39,15 @@ function AllocateDrugs({ contract, currentUser }) {
   };
 
   return (
-    <div>
-      <p>Allocate Drugs</p>
+    <div className="w-full md:w-1/2 h-full border rounded-lg p-5 mt-6">
+      <p className=" font-semibold">Allocate Drugs</p>
       <form>
         <input
           type="text"
           placeholder="Patient Address"
           value={patientAddress}
           onChange={(e) => setPatientAddress(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         {drugs.map((drug, index) => (
           <div key={index} className="drug-input">
@@ -57,6 +60,7 @@ function AllocateDrugs({ contract, currentUser }) {
                 updatedDrugs[index] = e.target.value;
                 setDrugs(updatedDrugs);
               }}
+              className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
             />
             <input
               type="number"
@@ -67,10 +71,15 @@ function AllocateDrugs({ contract, currentUser }) {
                 updatedAmounts[index] = parseInt(e.target.value);
                 setAllocationAmounts(updatedAmounts);
               }}
+              className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
             />
           </div>
         ))}
-        <button type="button" onClick={handleAllocateDrugs}>
+        <button
+          type="button"
+          onClick={handleAllocateDrugs}
+          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none bg-lightPrimary"
+        >
           Allocate Drugs
         </button>
       </form>

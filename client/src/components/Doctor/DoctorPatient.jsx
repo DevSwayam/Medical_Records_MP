@@ -4,7 +4,7 @@ import AllocateDrugs from "./AllocateDrugs";
 
 const DoctorPatient = ({ contract }) => {
   return (
-    <div>
+    <div className="w-full flex flex-col items-center justify-center">
       <GetPatientDetails contract={contract}/>
       <AllocateDrugs contract={contract}/>
     </div>

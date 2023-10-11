@@ -75,9 +75,9 @@ function AdminDoctor({ contract }) {
   };
 
   return (
-    <div className="md:w-1/2  ">
+    <div className=" ">
       <div className="h-full border rounded-lg p-5 mb-6">
-        <p>Get Doctor details</p>
+        <p className=" font-semibold">Get Doctor details</p>
         <form className="">
           <input
             type="text"
