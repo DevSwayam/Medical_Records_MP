@@ -23,9 +23,25 @@ const Navbar = () => {
         </Link>
 
         <div className="flex gap-6">
-          <Link to="/login">
+          <Link to="/admindashboard">
             <p className="p-3 rounded text-lg hover:text-purpleColor cursor-pointer">
-              Login
+              Admin Dashboard
+            </p>
+          </Link>
+        </div>
+
+        <div className="flex gap-6">
+          <Link to="/doctordashboard">
+            <p className="p-3 rounded text-lg hover:text-purpleColor cursor-pointer">
+              Doctor Dashboard
+            </p>
+          </Link>
+        </div>
+
+        <div className="flex gap-6">
+          <Link to="/supplierdashboard">
+            <p className="p-3 rounded text-lg hover:text-purpleColor cursor-pointer">
+              Supplier Dashboard
             </p>
           </Link>
         </div>
