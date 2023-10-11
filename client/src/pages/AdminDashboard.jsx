@@ -1,46 +1,46 @@
 import React from "react";
-import AdminDoctor from "../components/AdminDoctor";
-import AdminPatient from "../components/AdminPatient";
-import AdminDrug from "../components/AdminDrug";
-import AdminDistributor from "../components/AdminDistributor";
-import AdminPharmacy from "../components/AdminPharmacy";
-import AdminSupplier from "../components/AdminSupplier";
+import AddDoctor from "../components/Admin/AddDoctor";
+import AddPatient from "../components/Admin/GetPatientDetails";
+import AddDrug_GetDrug from "../components/Admin/AddDrug_GetDrug";
+import AddDistributor from "../components/Admin/AddDistributor";
+import AddPharmacy from "../components/Admin/AddPharmacy";
+import AddSupplier from "../components/Admin/AddSupplier";
 
 const AdminDashboard = ({ signer, account, provider, contract }) => {
   return (
     <div className=" w-full flex flex-col items-center justify-center gap-6 md:mt-24 mt-12">
       <p className=" text-xl font-semibold">AdminDashboard</p>
-      <AdminDoctor
+      <AddDoctor
         signer={signer}
         account={account}
         provider={provider}
         contract={contract}
       />
-      <AdminPatient
+      <AddPatient
         signer={signer}
         account={account}
         provider={provider}
         contract={contract}
       />
-      <AdminDrug
+      <AddDrug_GetDrug
         signer={signer}
         account={account}
         provider={provider}
         contract={contract}
       />
-      <AdminDistributor
+      <AddDistributor
         signer={signer}
         account={account}
         provider={provider}
         contract={contract}
       />
-      <AdminPharmacy
+      <AddPharmacy
         signer={signer}
         account={account}
         provider={provider}
         contract={contract}
       />
-      <AdminSupplier
+      <AddSupplier
         signer={signer}
         account={account}
         provider={provider}

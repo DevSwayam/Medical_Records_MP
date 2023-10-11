@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddPatient from "./AddPatient";
 
 function GetPatientDetails({ contract }) {
   const [patientAddress, setPatientAddress] = useState("");
@@ -122,6 +123,7 @@ function GetPatientDetails({ contract }) {
         </div>
       )}
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+      <AddPatient contract={contract}/>
     </div>
   );
 }

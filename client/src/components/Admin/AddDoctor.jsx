@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import GetDoctor from "./GetDoctor";
 
 function AddDoctor({contract}) {
   const [doctorAddress, setDoctorAddress] = useState("");
@@ -150,6 +151,7 @@ function AddDoctor({contract}) {
           Add Doctor
         </button>
       </form>
+      <GetDoctor contract={contract}/>
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
     </div>
   );

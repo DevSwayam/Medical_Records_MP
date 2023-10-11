@@ -111,7 +111,6 @@ function AdminDoctor({ contract }) {
           <p>Qualification: {doctorDetails.qualification}</p>
         </div>
       )}
-      <AddDoctor contract={contract} />
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
     </div>
   );

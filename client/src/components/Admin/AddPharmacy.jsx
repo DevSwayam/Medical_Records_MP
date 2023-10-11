@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import GetPharmacy from "./GetPharmacy";
 
-function AdminPharmacy({ contract }) {
+function AddPharmacy({ contract }) {
   const [pharmacyAddress, setPharmacyAddress] = useState("");
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -47,8 +48,10 @@ function AdminPharmacy({ contract }) {
         </button>
       </form>
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+      <GetPharmacy contract={contract}/>
     </div>
+    
   );
 }
 
-export default AdminPharmacy;
+export default AddPharmacy;
