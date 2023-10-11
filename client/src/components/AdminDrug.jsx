@@ -92,7 +92,7 @@ function AddDrugForm({ signer, contract }) {
         <button
           type="button"
           onClick={handleAddDrug}
-          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none"
+          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none bg-lightPrimary"
         >
           Add Drug
         </button>
@@ -114,7 +114,7 @@ function AddDrugForm({ signer, contract }) {
         <button
           type="button"
           onClick={handleGetSupplyCount}
-          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none"
+          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none bg-lightPrimary"
         >
           Get Supply Count
         </button>

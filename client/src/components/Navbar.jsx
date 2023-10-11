@@ -13,9 +13,9 @@ const Navbar = () => {
   return (
     <header>
       {/* Desktop and Tablet */}
-      <div className="hidden md:flex justify-between items-center py-4">
+      <div className="flex justify-center gap-10 items-center">
         <Link to="/">
-          <div className="flex items-center gap-2 text-xl cursor-pointer">
+          <div className="flex items-center gap-2 text-lg hover:text-purpleColor cursor-pointer">
             <span className="text-purpleColor">
             </span>
             Home Page
@@ -24,7 +24,7 @@ const Navbar = () => {
 
         <div className="flex gap-6">
           <Link to="/login">
-            <p className="p-3 rounded hover:shadow-lg hover:border-purpleColor cursor-pointer hover:border-2">
+            <p className="p-3 rounded text-lg hover:text-purpleColor cursor-pointer">
               Login
             </p>
           </Link>
