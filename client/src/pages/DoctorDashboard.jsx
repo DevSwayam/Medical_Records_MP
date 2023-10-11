@@ -1,10 +1,12 @@
 import React from 'react'
-import GetPatientDetails from '../components/Admin/GetPatientDetails'
+import DoctorPatient from '../components/Doctor/DoctorPatient'
+import GetDrug from '../components/Admin/GetDrug'
 
-const DoctorDashboard = () => {
+const DoctorDashboard = ({contract}) => {
   return (
     <div className=' flex justify-center items-center mt-24'>
-        <GetPatientDetails />
+        <DoctorPatient contract={contract}/>
+        <GetDrug contract={contract}/>
     </div>
   )
 }

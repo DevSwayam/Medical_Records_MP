@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import { useState, useEffect } from "react";
 import DoctorDashboard from "./pages/DoctorDashboard";
-
+import SupplierDashboard from "./pages/SupplierDashboard";
 
 const { ethers } = require("ethers");
 const {
@@ -47,14 +47,26 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/doctordashboard" element={<DoctorDashboard />} />
+        <Route
+          path="/doctordashboard"
+          element={
+            <DoctorDashboard
+              contract={contract}
+            />
+          }
+        />
         <Route
           path="/admindashboard"
           element={
             <AdminDashboard
-              signer={signer}
-              account={account}
-              provider={provider}
+              contract={contract}
+            />
+          }
+        />
+        <Route
+          path="/supplierdashboard"
+          element={
+            <SupplierDashboard
               contract={contract}
             />
           }

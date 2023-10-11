@@ -1,7 +1,7 @@
 import React from "react";
 import AddDoctor from "../components/Admin/AddDoctor";
 import AddPatient from "../components/Admin/GetPatientDetails";
-import AddDrug_GetDrug from "../components/Admin/AddDrug_GetDrug";
+import AddDrug from "../components/Admin/AddDrug";
 import AddDistributor from "../components/Admin/AddDistributor";
 import AddPharmacy from "../components/Admin/AddPharmacy";
 import AddSupplier from "../components/Admin/AddSupplier";
@@ -22,7 +22,7 @@ const AdminDashboard = ({ signer, account, provider, contract }) => {
         provider={provider}
         contract={contract}
       />
-      <AddDrug_GetDrug
+      <AddDrug
         signer={signer}
         account={account}
         provider={provider}
