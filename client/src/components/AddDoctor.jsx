@@ -55,7 +55,7 @@ function AddDoctor(contract) {
   };
 
   return (
-    <div>
+    <div className="h-full ">
       <p>Add Doctor</p>
       <form>
         <input
@@ -63,74 +63,90 @@ function AddDoctor(contract) {
           placeholder="Doctor Address"
           value={doctorAddress}
           onChange={(e) => setDoctorAddress(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="ID"
           value={id}
           onChange={(e) => setId(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="House Address"
           value={houseAddr}
           onChange={(e) => setHouseAddr(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="City Address"
           value={cityAddr}
           onChange={(e) => setCityAddr(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="State Address"
           value={stateAddr}
           onChange={(e) => setStateAddr(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="Postal Address"
           value={postalAddr}
           onChange={(e) => setPostalAddr(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="Country Address"
           value={countryAddr}
           onChange={(e) => setCountryAddr(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="Phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="License Number"
           value={licenseNo}
           onChange={(e) => setLicenseNo(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="text"
           placeholder="Qualification"
           value={qualification}
           onChange={(e) => setQualification(e.target.value)}
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
-        <button type="button" onClick={handleAddDoctor}>
+        <button
+          type="button"
+          onClick={handleAddDoctor}
+          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none bg-lightPrimary"
+        >
           Add Doctor
         </button>
       </form>
