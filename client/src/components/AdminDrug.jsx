@@ -15,9 +15,13 @@ function AddDrugForm({ signer, contract }) {
 
   const handleAddDrug = async () => {
     try {
-      const transaction = await contract.addDrug(addDrugForm.drugName, addDrugForm.supplyCount, {
-        from: signer.getAddress(),
-      });
+      const transaction = await contract.addDrug(
+        addDrugForm.drugName,
+        addDrugForm.supplyCount,
+        {
+          from: signer.getAddress(),
+        }
+      );
       await transaction.wait();
       // Reset form fields after successful transaction
       setAddDrugForm({
@@ -52,25 +56,44 @@ function AddDrugForm({ signer, contract }) {
     }
   };
 
-  const { drugName: addDrugName, supplyCount: addSupplyCount, errorMessage: addErrorMessage } = addDrugForm;
-  const { drugName: getDrugName, supplyCount: getSupplyCount, errorMessage: getErrorMessage } = getSupplyCountForm;
+  const {
+    drugName: addDrugName,
+    supplyCount: addSupplyCount,
+    errorMessage: addErrorMessage,
+  } = addDrugForm;
+  const {
+    drugName: getDrugName,
+    supplyCount: getSupplyCount,
+    errorMessage: getErrorMessage,
+  } = getSupplyCountForm;
 
   return (
-    <div>
-      <form>
+    <div className=" h-full border rounded-lg p-5 ">
+      <form className="">
+        <p className=" font-semibold">Drug Info.:</p>
         <input
           type="text"
           placeholder="Drug Name"
           value={addDrugName}
-          onChange={(e) => setAddDrugForm({ ...addDrugForm, drugName: e.target.value })}
+          onChange={(e) =>
+            setAddDrugForm({ ...addDrugForm, drugName: e.target.value })
+          }
+          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
         />
         <input
           type="number"
           placeholder="Supply Count"
           value={addSupplyCount}
-          onChange={(e) => setAddDrugForm({ ...addDrugForm, supplyCount: e.target.value })}
+          onChange={(e) =>
+            setAddDrugForm({ ...addDrugForm, supplyCount: e.target.value })
+          }
+          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none"
         />
-        <button type="button" onClick={handleAddDrug}>
+        <button
+          type="button"
+          onClick={handleAddDrug}
+          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none"
+        >
           Add Drug
         </button>
       </form>
@@ -80,9 +103,19 @@ function AddDrugForm({ signer, contract }) {
           type="text"
           placeholder="Drug Name"
           value={getDrugName}
-          onChange={(e) => setGetSupplyCountForm({ ...getSupplyCountForm, drugName: e.target.value })}
+          onChange={(e) =>
+            setGetSupplyCountForm({
+              ...getSupplyCountForm,
+              drugName: e.target.value,
+            })
+          }
+          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none"
         />
-        <button type="button" onClick={handleGetSupplyCount}>
+        <button
+          type="button"
+          onClick={handleGetSupplyCount}
+          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none"
+        >
           Get Supply Count
         </button>
       </form>

@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import { useState, useEffect } from "react";
+
+
 const { ethers, Wallet } = require("ethers");
 const {
   contractAbi,
@@ -39,7 +41,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className=" p-6">
       <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />

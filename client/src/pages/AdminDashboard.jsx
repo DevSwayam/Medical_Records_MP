@@ -8,8 +8,8 @@ import AdminSupplier from "../components/AdminSupplier";
 
 const AdminDashboard = ({ signer, account, provider, contract }) => {
   return (
-    <div>
-      <div>AdminDashboard</div>
+    <div className=" w-full flex flex-col items-center justify-center gap-6">
+      <p className=" text-xl font-semibold">AdminDashboard</p>
       <AdminDoctor
         signer={signer}
         account={account}
