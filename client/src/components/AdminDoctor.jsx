@@ -75,24 +75,27 @@ function AdminDoctor({ contract }) {
   };
 
   return (
-    <div className="md:w-1/2 h-full border rounded-lg p-5 ">
-      <p>Get Doctor details</p>
-      <form className="">
-        <input
-          type="text"
-          placeholder="Doctor Address"
-          value={doctorAddress}
-          onChange={(e) => setDoctorAddress(e.target.value)}
-          className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
-        />
-        <button
-          type="button"
-          onClick={handleGetDoctorDetails}
-          className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none bg-lightPrimary"
-        >
-          Get Doctor Details
-        </button>
-      </form>
+    <div className="md:w-1/2  ">
+      <div className="h-full border rounded-lg p-5 mb-6">
+        <p>Get Doctor details</p>
+        <form className="">
+          <input
+            type="text"
+            placeholder="Doctor Address"
+            value={doctorAddress}
+            onChange={(e) => setDoctorAddress(e.target.value)}
+            className=" border w-full p-2 px-2 my-2 rounded-lg focus:outline-none"
+          />
+          <button
+            type="button"
+            onClick={handleGetDoctorDetails}
+            className=" border w-full p-2 px-2 mb-2 rounded-lg focus:outline-none bg-lightPrimary"
+          >
+            Get Doctor Details
+          </button>
+        </form>
+      </div>
+
       {doctorDetails.name && (
         <div>
           <p>Id: {doctorDetails.id}</p>

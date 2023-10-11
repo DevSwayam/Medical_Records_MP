@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import { useState, useEffect } from "react";
+import DoctorDashboard from "./pages/DoctorDashboard";
 
 
 const { ethers } = require("ethers");
@@ -46,6 +47,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/doctordashboard" element={<DoctorDashboard />} />
         <Route
           path="/admindashboard"
           element={

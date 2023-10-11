@@ -55,7 +55,7 @@ function AddDoctor({contract}) {
   };
 
   return (
-    <div className="h-full ">
+    <div className="h-full border rounded-lg p-5 ">
       <p>Add Doctor</p>
       <form>
         <input
