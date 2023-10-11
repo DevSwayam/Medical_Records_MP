@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
 
-function AddDoctor(contract) {
+function AddDoctor({contract}) {
   const [doctorAddress, setDoctorAddress] = useState("");
   const [id, setId] = useState("");
   const [name, setName] = useState("");

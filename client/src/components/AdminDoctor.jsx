@@ -4,6 +4,7 @@ import AddDoctor from './AddDoctor.jsx'
 function AdminDoctor({ contract }) {
   const [doctorAddress, setDoctorAddress] = useState("");
   const [doctorDetails, setDoctorDetails] = useState({
+    id:"",
     name: "",
     houseAddr: "",
     cityAddr: "",
@@ -23,23 +24,24 @@ function AdminDoctor({ contract }) {
       console.log(result);
       // Handle the ENS error
       if (result && result[8]) {
-        const licenseNo = result[8].toNumber ? result[8].toNumber() : result[8];
         const formattedDetails = {
-          name: result[0],
-          houseAddr: result[1],
-          cityAddr: result[2],
-          stateAddr: result[3],
-          postalAddr: result[4],
-          countryAddr: result[5],
-          phone: result[6],
-          email: result[7],
-          licenseNo: licenseNo,
-          qualification: result[9],
+          id:result[0],
+          name: result[1],
+          houseAddr: result[2],
+          cityAddr: result[3],
+          stateAddr: result[4],
+          postalAddr: result[5],
+          countryAddr: result[6],
+          phone: result[7],
+          email: result[8],
+          licenseNo: result[9]._hex,
+          qualification: result[10],
         };
         setDoctorDetails(formattedDetails);
         setErrorMessage("");
       } else {
         setDoctorDetails({
+          id:"",
           name: "",
           houseAddr: "",
           cityAddr: "",
@@ -55,6 +57,7 @@ function AdminDoctor({ contract }) {
       }
     } catch (error) {
       setDoctorDetails({
+        id:"",
         name: "",
         houseAddr: "",
         cityAddr: "",
@@ -87,6 +90,7 @@ function AdminDoctor({ contract }) {
       </form>
       {doctorDetails.name && (
         <div>
+          <p>Id: {doctorDetails.id}</p>
           <p>Name: {doctorDetails.name}</p>
           <p>House Address: {doctorDetails.houseAddr}</p>
           <p>City Address: {doctorDetails.cityAddr}</p>

@@ -6,7 +6,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import { useState, useEffect } from "react";
 
 
-const { ethers, Wallet } = require("ethers");
+const { ethers } = require("ethers");
 const {
   contractAbi,
   contractAddress,
@@ -33,6 +33,7 @@ function App() {
         );
         setContract(contract);
         setProvider(provider);
+        console.log(account);
       } else {
         alert("Wallet is not present");
       }
