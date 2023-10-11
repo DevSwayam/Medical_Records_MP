@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AdminPatient = ({ signer, account, provider, contract }) => {
+const AdminPatient = ({contract}) => {
   return (
     <div>AdminPatient</div>
   )

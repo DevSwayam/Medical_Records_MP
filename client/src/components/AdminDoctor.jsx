@@ -4,7 +4,7 @@ import AddDoctor from "./AddDoctor.jsx";
 function AdminDoctor({ contract }) {
   const [doctorAddress, setDoctorAddress] = useState("");
   const [doctorDetails, setDoctorDetails] = useState({
-    id:"",
+    id: "",
     name: "",
     houseAddr: "",
     cityAddr: "",
@@ -13,7 +13,7 @@ function AdminDoctor({ contract }) {
     countryAddr: "",
     phone: "",
     email: "",
-    licenseNo: 0,
+    licenseNo: "",
     qualification: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
@@ -23,9 +23,9 @@ function AdminDoctor({ contract }) {
       const result = await contract.doctors(doctorAddress);
       console.log(result);
       // Handle the ENS error
-      if (result && result[8]) {
+      if (result) {
         const formattedDetails = {
-          id:result[0],
+          id: result[0],
           name: result[1],
           houseAddr: result[2],
           cityAddr: result[3],
@@ -41,7 +41,7 @@ function AdminDoctor({ contract }) {
         setErrorMessage("");
       } else {
         setDoctorDetails({
-          id:"",
+          id: "",
           name: "",
           houseAddr: "",
           cityAddr: "",
@@ -50,14 +50,14 @@ function AdminDoctor({ contract }) {
           countryAddr: "",
           phone: "",
           email: "",
-          licenseNo: 0,
+          licenseNo: "",
           qualification: "",
         });
         setErrorMessage("Doctor not found or an error occurred.");
       }
     } catch (error) {
       setDoctorDetails({
-        id:"",
+        id: "",
         name: "",
         houseAddr: "",
         cityAddr: "",
@@ -66,7 +66,7 @@ function AdminDoctor({ contract }) {
         countryAddr: "",
         phone: "",
         email: "",
-        licenseNo: 0,
+        licenseNo: "",
         qualification: "",
       });
       setErrorMessage("Doctor not found or an error occurred.");
