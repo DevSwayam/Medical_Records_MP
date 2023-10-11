@@ -14,8 +14,8 @@ function GetPharmacy({ contract }) {
 
       if (result) {
         const formattedDetails = {
-          address: pharmacyAddress,
-          name: result,
+          address: result[0],
+          name: result[1],
         };
         setPharmacyDetails(formattedDetails);
         setErrorMessage("");

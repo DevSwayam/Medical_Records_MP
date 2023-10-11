@@ -1,10 +1,10 @@
 import React from 'react'
-import AddDrug from '../components/Admin/AddDrug'
+import AddDrugForm from '../components/Admin/AddDrug'
 
-const SupplierDashboard = ({contrct}) => {
+const SupplierDashboard = ({contract}) => {
   return (
     <div className=' flex items-center justify-center'>
-        <AddDrug contrct={contrct}/>
+        <AddDrugForm contract={contract}/>
     </div>
   )
 }

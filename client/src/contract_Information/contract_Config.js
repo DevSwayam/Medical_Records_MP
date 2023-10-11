@@ -1,5 +1,10 @@
 const contractAbi= [
 	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -223,6 +228,19 @@ const contractAbi= [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "admin",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -243,24 +261,6 @@ const contractAbi= [
 		"name": "allocateDrugs",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [],
-		"name": "admin",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -590,6 +590,6 @@ const contractAbi= [
 	}
 ]
 
-const contractAddress = "0xeE9f17F8B2400A24888D000eA05B80541B1c0b2e"
+const contractAddress = "0x31f94E049140181d98DA6F751A66bD23e1C5320c"
 
 module.exports={contractAbi,contractAddress};
